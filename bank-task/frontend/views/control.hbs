@@ -1,0 +1,35 @@
+{{>header}}
+{{>nav}}
+<section class="row">
+    <table class="table  mx-2">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Customer Name</th>
+          <th>Account Balnce</th>
+          {{!-- <th>status</th> --}}
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each allUsers}}
+
+ <tr class="alert alert-success">
+          <td>{{id}}</td>
+          <td>{{name}}</td>
+          <td>{{blance}}</td>
+   
+    <td>
+            <a href="/single/{{id}}" class="btn btn-primary mx-2">Show</a>
+            <a href="/delete/{{id}}" class="btn btn-danger mx-2">Delete</a>
+            
+    </td>
+        </tr> 
+        {{/each}}
+      </tbody>
+    </table>
+            <a href="/add" class="btn btn-primary mx-3">Add Customer</a>
+
+  </section>
+
+{{>footer}}

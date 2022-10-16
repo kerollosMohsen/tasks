@@ -1,0 +1,48 @@
+{{>header}}
+{{>nav}}
+
+{{#if isFound}}
+<section class="row container">
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Account Balnce</th>
+          <th>withdraw</th>
+          <th>deposit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.blance}}</td>
+       
+    <td>
+      <form action="withdraw">
+        <input type="number" name="take" value="0">
+        <input type="number" name="userid" class="d-none" value="{{user.id}}">
+  <button type="submit" class="btn btn-primary">Withdraw</button>
+        
+      </form>
+     
+    </td>
+    <td>
+       <form action="deposit">
+        <input type="number" name="add" value="0">
+        <input type="number" name="userid" class="d-none" value="{{user.id}}">
+  <button type="submit" class="btn btn-primary">Deposit</button>
+        
+      </form>
+    </td>
+        </tr>
+    
+      </tbody>
+    </table>
+  </section>
+{{else}}
+  <div class="alert alert-danger">User Not Found</div>
+{{/if}}
+
+{{>footer}}

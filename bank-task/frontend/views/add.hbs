@@ -1,0 +1,20 @@
+{{>header}}
+{{>nav}}
+<h3 class="text-center text-primary my-3">
+    {{title}}
+</h3>
+<form action="/addMethod">
+    <div class="mb-3">
+        <input name="name" placeholder="customer name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <input name="age" placeholder="age" class="form-control" type="number">
+    </div>
+    <div class="mb-3">
+        <input name="blance" placeholder="balance" class="form-control" type="number">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Add customer</button>
+    </div>
+</form>
+{{>footer}}
