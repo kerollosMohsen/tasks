@@ -1,0 +1,56 @@
+{{>header}}
+{{>nav}}
+<section class="row">
+    <table class="table  mx-2">
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>task content</th>
+          <th>due date</th>
+          <th>status</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each allTask}}
+{{#if Status}}
+ <tr class="alert alert-success">
+          <td>{{title}}</td>
+          <td>{{content}}</td>
+          <td>{{duedate}}</td>
+       <td><form action="taskCompleted">
+        
+            <button class="btn btn-warning mx-2" disabled>completed</button>
+            
+          </form></td>
+    <td>
+            <a href="/single/{{title}}" class="btn btn-primary mx-2">Show</a>
+            <a href="/delete/{{title}}" class="btn btn-danger mx-2">Delete</a>
+
+
+    </td>
+        </tr>
+{{else}}
+ <tr>
+          <td>{{title}}</td>
+          <td>{{content}}</td>
+          <td>{{duedate}}</td>
+       <td><form action="taskCompleted">
+            <a href="/taskCompleted/{{title}}" class="btn btn-warning mx-2">complete</a>
+          </form></td>
+    <td>
+            <a href="/single/{{title}}" class="btn btn-primary mx-2">Show</a>
+            <a href="/delete/{{title}}" class="btn btn-danger mx-2">Delete</a>
+
+
+    </td>
+        </tr>
+{{/if}}
+       
+    
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+
+{{>footer}}
